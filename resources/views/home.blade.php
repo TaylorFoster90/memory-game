@@ -10,6 +10,7 @@
 
   <body>
     <h1>Memory Game</h1>
+    <h3><a href="/play">Start New Game</a></h3>
     <footer>
       <script src="/js/app.js"></script>
     </footer>

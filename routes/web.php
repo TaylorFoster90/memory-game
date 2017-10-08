@@ -14,3 +14,8 @@
 Route::get('/', function () {
     return view('home');
 });
+
+
+Route::get('/play', function () {
+    return view('game.show');
+});

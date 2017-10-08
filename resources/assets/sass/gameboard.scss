@@ -1,0 +1,85 @@
+$blue: rgb(0, 64, 255);
+$yellow: rgb(255, 255, 77);
+$green: rgb(191, 255, 0);
+$red: rgb(255, 64, 0);
+
+#gameboard{
+  background-color: #FFF;
+  max-width: 50%;
+  margin: 0 auto;
+  position: relative;
+  border-radius: 10px;
+  .gameboard-block{
+    float: left;
+    padding: 20px;
+    width: 50%;
+    .inner{
+      display: block;
+      width: 150px;
+      height: 150px;
+      border-radius: 10px;
+      transition: transform .1s ease;
+      &:hover{
+        transform: scale(1.1);
+      }
+    }
+    &:nth-of-type(odd){
+      .inner{
+        margin-left: auto;
+      }
+    }
+    &.blue{
+      .inner{
+        background-color: $blue;
+        &:hover{
+          -moz-box-shadow: 0 0 10px $blue;
+          -webkit-box-shadow: 0 0 10px $blue;
+          box-shadow: 0 0 10px $blue;
+        }
+      }
+    }
+    &.yellow{
+      .inner{
+        background-color: $yellow;
+        &:hover{
+          -moz-box-shadow: 0 0 10px $yellow;
+          -webkit-box-shadow: 0 0 10px $yellow;
+          box-shadow: 0 0 10px $yellow;
+        }
+      }
+    }
+    &.green{
+      .inner{
+        background-color: $green;
+        &:hover{
+          -moz-box-shadow: 0 0 10px $green;
+          -webkit-box-shadow: 0 0 10px $green;
+          box-shadow: 0 0 10px $green;
+        }
+      }
+    }
+    &.red{
+      .inner{
+        background-color: $red;
+        &:hover{
+          -moz-box-shadow: 0 0 10px $red;
+          -webkit-box-shadow: 0 0 10px $red;
+          box-shadow: 0 0 10px $red;
+        }
+      }
+    }
+  }
+  @media( max-width: 991px ){
+    max-width: 75%;
+  }
+  @media( max-width: 479px ){
+    max-width: 95%;
+    .gameboard-block{
+      padding: 10px;
+      .inner{
+        width: 125px;
+        height: 125px;
+      }
+    }
+  }
+}
