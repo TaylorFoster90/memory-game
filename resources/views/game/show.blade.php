@@ -2,7 +2,7 @@
 
 @section('page-content')
 
-<section class="play-area">
+<section class="play-area" id="app">
   <div class="container">
     <div class="row">
 
@@ -12,15 +12,7 @@
 
       <div class="col-12">
 
-        <div id="gameboard" class="clearfix">
-
-          <div class="gameboard-block blue"><a href="#" class="inner"></a></div>
-          <div class="gameboard-block green"><a href="#" class="inner"></a></div>
-          <div class="gameboard-block yellow"><a href="#" class="inner"></a></div>
-          <div class="gameboard-block red"><a href="#" class="inner"></a></div>
-
-        </div>
-
+        <gameboard />
 
       </div>
 
