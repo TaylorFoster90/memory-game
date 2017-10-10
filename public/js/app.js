@@ -907,12 +907,7 @@ Vue.component('example', __webpack_require__(40));
 Vue.component('gameboard', __webpack_require__(43));
 
 var app = new Vue({
-  el: '#app',
-  filters: {
-    limit: function limit(arr, _limit) {
-      return arr.slice(0, _limit);
-    }
-  }
+  el: '#app'
 });
 
 /***/ }),
@@ -44870,12 +44865,6 @@ module.exports = {
     },
     getScore: function getScore() {
       return this.currentGame.round - 1;
-    }
-  },
-  computed: {},
-  filters: {
-    limit: function limit(arr, _limit) {
-      return arr.slice(0, 5);
     }
   }
 };

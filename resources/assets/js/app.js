@@ -24,10 +24,5 @@ Vue.component('example', require('./components/Example.vue'));
 Vue.component('gameboard', require('./components/GameBoard.vue'));
 
 const app = new Vue({
-    el: '#app',
-    filters: {
-       limit: function(arr, limit) {
-         return arr.slice(0, limit)
-      }
-    }
+    el: '#app'
 });

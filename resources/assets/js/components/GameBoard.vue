@@ -252,14 +252,6 @@
       getScore: function(){
         return this.currentGame.round - 1;
       }
-    },
-    computed: {
-
-    },
-    filters: {
-       limit: function(arr, limit) {
-         return arr.slice(0, 5)
-      }
     }
   }
 </script>
