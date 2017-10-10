@@ -9,8 +9,10 @@ require('./bootstrap');
 import VModal from 'vue-js-modal'
 
 window.Vue = require('vue');
+var VueResource = require('vue-resource');
 
-Vue.use(VModal)
+Vue.use(VModal);
+Vue.use(VueResource);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -22,5 +24,10 @@ Vue.component('example', require('./components/Example.vue'));
 Vue.component('gameboard', require('./components/GameBoard.vue'));
 
 const app = new Vue({
-    el: '#app'
+    el: '#app',
+    filters: {
+       limit: function(arr, limit) {
+         return arr.slice(0, limit)
+      }
+    }
 });

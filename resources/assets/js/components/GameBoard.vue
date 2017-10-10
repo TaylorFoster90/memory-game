@@ -1,7 +1,8 @@
 <template>
   <div>
 
-    <h2 class="text-center">Score: {{ getScore() }}</h2>
+    <h2 class="text-center mb-0">Score: {{ getScore() }}</h2>
+    <h4 class="text-center">High Score: {{ savedScores[0] ? savedScores[0].score : '' }}</h4>
     <div id="gameboard" class="clearfix" v-bind:style="{ 'border-color': activeChoice.hex }">
 
       <div v-for="choice in choices" class="gameboard-block" v-bind:class="{ 'active' : isActiveChoice(choice) }"><span href="#" v-on:click="playerSelectChoice(choice.id)"  v-bind:style="{ 'background-color': choice.hex }" class="inner"></span></div>
@@ -18,17 +19,19 @@
             <div class="form-group">
               <input type="text" class="form-control" placeholder="Name.." v-model="playerName">
             </div>
-            <h3>Player Name - {{ playerName }}</h3>
+            <h3>Player Name: {{ playerName }}</h3>
             <button class="btn btn-md btn-success" v-on:click.prevent="startGame()">Start Game</button>
           </div>
         </div>
 
         <div class="col-12 col-md-6">
-          <h3>Past 5 Scores</h3>
+          <h3>Past 5 Games</h3>
           <p v-for="score in localScores" class="mb-0">{{ score.name }} - {{ score.score }}</p>
         </div>
 
         <div class="col-12 col-md-6">
+          <h3>Top 5 All Time Scores</h3>
+          <p v-for="score, index in savedScores" class="mb-0">{{ index + 1 }}. {{ score.name }}: {{ score.score }}</p>
         </div>
 
       </div>
@@ -40,6 +43,11 @@
 
 <script>
   module.exports = {
+    http: {
+      headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+      }
+    },
     props: [ 'user' ],
     data: function(){
       return {
@@ -53,6 +61,7 @@
           choiceCount: 0
         },
         localScores: [ ],
+        savedScores: [ ],
         activeChoice: { },
         choices: [
           {
@@ -80,10 +89,13 @@
         playerName: null
       };
     },
+    created: function(){
+      this.fetchStoredScores();
+    },
     mounted : function(){
       this.nextRound(); // Setup round one when the component is mounted
       this.setLocalScores(); // Setup the local scores
-      this.$modal.show(this.modalName); // Open the modal 
+      this.$modal.show(this.modalName); // Open the modal
     },
     methods: {
       startGame: function(){
@@ -153,6 +165,7 @@
       gameOver: function(){
         alert('WRONG, GAME OVER');
         this.addLocalScore();
+        this.addStoredScore();
         this.resetGame();
       },
       findChoice: function(choiceId) {
@@ -210,12 +223,42 @@
         localStorage.setItem("scores", JSON.stringify(scores));
         this.localScores = scores;
       },
+      fetchStoredScores: function() {
+        this.$http.get('/api/scores', { })
+        .then((response) => {
+          // Success
+          this.savedScores = response.data;
+          console.log(this.savedScores);
+        })
+        .catch((err) => {
+          // Error
+        });
+      },
+      addStoredScore: function(){
+        this.$http.post('/api/scores', {
+          name: this.playerName,
+          score: this.getScore()
+         })
+        .then((response) => {
+          console.log(response.data);
+          // The api endpoint gives us the top 20 scores back when we create a new one
+          // So we can update our savedScores model
+          this.savedScores = response.data;
+        })
+        .catch((err) => {
+        });
+      },
       getScore: function(){
         return this.currentGame.round - 1;
       }
     },
     computed: {
 
+    },
+    filters: {
+       limit: function(arr, limit) {
+         return arr.slice(0, 5)
+      }
     }
   }
 </script>
