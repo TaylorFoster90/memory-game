@@ -1,13 +1,39 @@
 <template>
-  <div id="gameboard" class="clearfix" v-bind:style="{ 'border-color': activeChoice.hex }">
+  <div>
 
-    <div v-for="choice in choices" class="gameboard-block" v-bind:class="{ 'active' : isActiveChoice(choice) }"><span href="#" v-on:click="playerSelectChoice(choice.id)" class="inner"></span></div>
+    <h2 class="text-center">Score: {{ getScore() }}</h2>
+    <div id="gameboard" class="clearfix" v-bind:style="{ 'border-color': activeChoice.hex }">
 
-    <div class="text-center">
-      <div class="btn-group">
-        <button class="btn btn-md btn-success" v-if="!currentGame.inProgress" v-on:click.prevent="startGame()">Start Game</button>
-      </div>
+      <div v-for="choice in choices" class="gameboard-block" v-bind:class="{ 'active' : isActiveChoice(choice) }"><span href="#" v-on:click="playerSelectChoice(choice.id)"  v-bind:style="{ 'background-color': choice.hex }" class="inner"></span></div>
+
     </div>
+
+    <modal :name="modalName" :clickToClose="false">
+      <div class="row">
+
+        <div class="col-12">
+          <div class="text-center">
+            <h1>Welcome!</h1>
+            <p>To get started, enter your name so we can keep track of your score.</p>
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Name.." v-model="playerName">
+            </div>
+            <h3>Player Name - {{ playerName }}</h3>
+            <button class="btn btn-md btn-success" v-on:click.prevent="startGame()">Start Game</button>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6">
+          <h3>Past 5 Scores</h3>
+          <p v-for="score in localScores" class="mb-0">{{ score.name }} - {{ score.score }}</p>
+        </div>
+
+        <div class="col-12 col-md-6">
+        </div>
+
+      </div>
+    </modal>
+
 
   </div>
 </template>
@@ -23,9 +49,10 @@
           pattern: []
         },
         playerTurn: {
-          active: true,
+          active: false,
           choiceCount: 0
         },
+        localScores: [ ],
         activeChoice: { },
         choices: [
           {
@@ -48,16 +75,25 @@
             name: 'red',
             hex: '#ff4000'
           }
-        ]
+        ],
+        modalName: 'game-modal',
+        playerName: null
       };
     },
     mounted : function(){
       this.nextRound(); // Setup round one when the component is mounted
+      this.setLocalScores(); // Setup the local scores
+      this.$modal.show(this.modalName); // Open the modal 
     },
     methods: {
       startGame: function(){
-        this.currentGame.inProgress = true;
-        this.executeRound();
+        if( this.playerName ) {
+          this.$modal.hide(this.modalName);
+          this.currentGame.inProgress = true;
+          this.executeRound();
+        }else{
+          alert('Name Please!');
+        }
       },
       nextRound: function(){
         var random = Math.floor(Math.random() * 4), // random number 0-4 corresponding to choices length
@@ -66,40 +102,58 @@
         this.playerTurn.choiceCount = 0;
         this.currentGame.round++;
       },
-      executeRound: function() {
-        var counter = 0,
-            self = this;
-        function round()
-        {
-          if ( counter < self.currentGame.round ){
-            var choice = self.findChoice(self.currentGame.pattern[counter]);
-            self.activeChoice = choice;
-            counter++;
-            window.setTimeout(round, 700);
-          }else{
-            self.activeChoice = {};
-          }
-        }
-        round();
+      /**
+       * Simulates the current round
+       * @param  int choiceId
+       * @return void
+       */
+      roundSimulate: function(choiceId){
+        var self = this;
+        this.activeChoice = this.findChoice(choiceId);
+        setTimeout(function(){
+          self.activeChoice = {};
+        }, 300);
       },
-      startPlayerTurn: function(){
-        this.activeChoice = {};
-        this.currentRound.playersTurn = true;
+      /**
+       * Executes the round simulation
+       * @return void
+       */
+      executeRound: function() {
+        var i = 0,
+            self = this;
+       this.playerTurn.active = false;
+       var moves = setInterval(function(){
+         self.roundSimulate(self.currentGame.pattern[i]);
+         i++;
+         if ( i >= self.currentGame.pattern.length ) {
+           clearInterval(moves);
+           self.playerTurn.active = true;
+         }
+       }, 600);
       },
       playerSelectChoice: function(choiceId){
-        if( this.currentGame.pattern[this.playerTurn.choiceCount] == choiceId ){
-          this.playerTurn.choiceCount++;
-          if( this.playerTurn.choiceCount >= this.currentGame.pattern.length ){
-            var self = this;
-            setTimeout( function(){
-              self.nextRound();
-              self.executeRound();
-            }, 500);
+        // If the game is not in progress and it is not the players turns, clicking doesn't do anything
+        if( this.currentGame.inProgress && this.playerTurn.active ) {
+          // Choosing the wrong choice will result is a gameover and a reset
+          if( this.currentGame.pattern[this.playerTurn.choiceCount] == choiceId ){
+            this.playerTurn.choiceCount++;
+            // If the player turn is over, set a delay and start the next round
+            if( this.playerTurn.choiceCount >= this.currentGame.pattern.length ){
+              var self = this;
+              setTimeout( function(){
+                self.nextRound(); // setup round
+                self.executeRound(); // execute round
+              }, 500);
+            }
+          }else{
+            this.gameOver();
           }
-        }else{
-          alert('WRONG, GAME OVER');
-          this.resetGame();
         }
+      },
+      gameOver: function(){
+        alert('WRONG, GAME OVER');
+        this.addLocalScore();
+        this.resetGame();
       },
       findChoice: function(choiceId) {
         var result;
@@ -113,13 +167,15 @@
       },
       resetGame: function(){
         this.playerTurn = {
-          active: true,
+          active: false,
           choiceCount: 0
         };
         this.currentGame = {
           round: 0,
-          pattern: []
+          pattern: [],
+          inProgress: false
         };
+        this.$modal.show(this.modalName);
         this.nextRound(); // Setup a new round
       },
       isActiveChoice: function(choice){
@@ -128,6 +184,34 @@
         }else{
           return false;
         }
+      },
+      /**
+       * Sets up the Vue model of the localStorage JSON
+       * If the localStorage value isn't set, setup and empty JSON
+       */
+      setLocalScores: function(){
+        if( localStorage.getItem("scores") ){
+          var scores = JSON.parse(localStorage.getItem("scores"));
+          this.localScores = scores;
+        }else{
+          localStorage.setItem("scores", "[]");
+        }
+      },
+      addLocalScore: function(){
+        var scores = JSON.parse(localStorage.getItem("scores"));
+        // Keep the local scores to a limit of 5
+        if( scores.length >= 5) {
+          scores.pop();
+        }
+        scores.unshift({
+          score: this.getScore(),
+          name: this.playerName
+        });
+        localStorage.setItem("scores", JSON.stringify(scores));
+        this.localScores = scores;
+      },
+      getScore: function(){
+        return this.currentGame.round - 1;
       }
     },
     computed: {

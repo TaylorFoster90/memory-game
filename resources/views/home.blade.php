@@ -1,18 +1,23 @@
-<!doctype html>
-<html lang="{{ app()->getLocale() }}">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Memory Game</title>
-    <link rel="stylesheet" href="/css/app.css">
-  </head>
+@extends('layouts.default')
 
-  <body>
-    <h1>Memory Game</h1>
-    <h3><a href="/play">Start New Game</a></h3>
-    <footer>
-      <script src="/js/app.js"></script>
-    </footer>
-  </body>
-</html>
+@section('page-content')
+
+<section class="play-area" id="app">
+  <div class="container">
+    <div class="row">
+
+      <div class="col-12">
+        <h1 class="text-center">Play New Game</h1>
+      </div>
+
+      <div class="col-12">
+
+        <gameboard></gameboard>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+@endsection

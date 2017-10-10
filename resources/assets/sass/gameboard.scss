@@ -1,8 +1,10 @@
+// Variables
 $blue: rgb(0, 64, 255);
 $yellow: rgb(255, 255, 77);
 $green: rgb(191, 255, 0);
 $red: rgb(255, 64, 0);
 
+// Board Styles
 #gameboard{
   background-color: #FFF;
   max-width: 50%;
@@ -27,8 +29,8 @@ $red: rgb(255, 64, 0);
       border-radius: 10px;
       transition: transform .1s ease;
       background-color: lightblue;
-      &:hover{
-        transform: scale(1.1);
+      &:active{
+        animation: pulse 0.2s 1 ease-out;
       }
     }
     &:nth-of-type(odd){
@@ -90,4 +92,29 @@ $red: rgb(255, 64, 0);
       }
     }
   }
+}
+
+@keyframes pulse {
+  from {
+    box-shadow:  0 0 0 0 rgba(255,255,255,.5),
+                 0 0 0 0 rgba(51,51,51,.5);
+  }
+  to {
+    box-shadow:  0 0 0 0.65em rgba(255,255,255,.5),
+                 0 0 0 1em rgba(51,51,51,0);
+  }
+}
+
+// Vue Modal Styles
+.v--modal-box.v--modal{
+  padding: 30px;
+  min-height: 400px!important;
+  height: auto!important;
+  overflow: scroll!important;
+  top: 40px!important;
+}
+
+// Classes
+.mb-0{
+  margin-bottom: 0;
 }
