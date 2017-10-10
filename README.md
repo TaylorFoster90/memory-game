@@ -1,5 +1,5 @@
 # memory-game
-A memory game, much like Simon, powered by VueJS and Laravel.
+A memory game, much like Simon, powered by VueJS and Laravel. Using chrome is the optimal browser for this project.
 
 
 ### Project Setup
@@ -37,3 +37,4 @@ The biggest obstacle I ran into is if the simulation chose the same choice twice
 - Discover more options for / optimize the `roundSimulate()` and `executeRound()` methods in the Vue model
 - Efficient Error Handling
 - Add a 'Full Leaderboard' that shows ALL scores from database ( currently top 5 displayed )
+- Safari seems to being having errors with Vue. Researching that further could be beneficial
