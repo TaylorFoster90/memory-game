@@ -870,7 +870,7 @@ module.exports = function normalizeComponent (
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(10);
-module.exports = __webpack_require__(44);
+module.exports = __webpack_require__(46);
 
 
 /***/ }),
@@ -892,7 +892,7 @@ __webpack_require__(11);
 
 
 window.Vue = __webpack_require__(37);
-var VueResource = __webpack_require__(54);
+var VueResource = __webpack_require__(38);
 
 Vue.use(__WEBPACK_IMPORTED_MODULE_0_vue_js_modal___default.a);
 Vue.use(VueResource);
@@ -903,8 +903,8 @@ Vue.use(VueResource);
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('example', __webpack_require__(38));
-Vue.component('gameboard', __webpack_require__(41));
+Vue.component('example', __webpack_require__(40));
+Vue.component('gameboard', __webpack_require__(43));
 
 var app = new Vue({
   el: '#app',
@@ -42872,603 +42872,6 @@ module.exports = Vue$3;
 
 /***/ }),
 /* 38 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-var normalizeComponent = __webpack_require__(8)
-/* script */
-var __vue_script__ = __webpack_require__(39)
-/* template */
-var __vue_template__ = __webpack_require__(40)
-/* styles */
-var __vue_styles__ = null
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "resources/assets/js/components/Example.vue"
-if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
-if (Component.options.functional) {console.error("[vue-loader] Example.vue: functional components are not supported with templates, they should use render functions.")}
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-0393f8f4", Component.options)
-  } else {
-    hotAPI.reload("data-v-0393f8f4", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 39 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-    mounted: function mounted() {
-        console.log('Component mounted.');
-    }
-});
-
-/***/ }),
-/* 40 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _vm._m(0)
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "container" }, [
-      _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col-md-8 col-md-offset-2" }, [
-          _c("div", { staticClass: "panel panel-default" }, [
-            _c("div", { staticClass: "panel-heading" }, [
-              _vm._v("Example Component")
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "panel-body" }, [
-              _vm._v(
-                "\n                    I'm an example component!\n                "
-              )
-            ])
-          ])
-        ])
-      ])
-    ])
-  }
-]
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-0393f8f4", module.exports)
-  }
-}
-
-/***/ }),
-/* 41 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-var normalizeComponent = __webpack_require__(8)
-/* script */
-var __vue_script__ = __webpack_require__(42)
-/* template */
-var __vue_template__ = __webpack_require__(43)
-/* styles */
-var __vue_styles__ = null
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "resources/assets/js/components/GameBoard.vue"
-if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
-if (Component.options.functional) {console.error("[vue-loader] GameBoard.vue: functional components are not supported with templates, they should use render functions.")}
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-25a1281e", Component.options)
-  } else {
-    hotAPI.reload("data-v-25a1281e", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 42 */
-/***/ (function(module, exports) {
-
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-module.exports = {
-  http: {
-    headers: {
-      'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-    }
-  },
-  props: ['user'],
-  data: function data() {
-    return {
-      currentGame: {
-        round: 0,
-        inProgress: false,
-        pattern: []
-      },
-      playerTurn: {
-        active: false,
-        choiceCount: 0
-      },
-      localScores: [],
-      savedScores: [],
-      activeChoice: {},
-      choices: [{
-        id: 1,
-        name: 'blue',
-        hex: '#0040ff'
-      }, {
-        id: 2,
-        name: 'yellow',
-        hex: '#ffff4d'
-      }, {
-        id: 3,
-        name: 'green',
-        hex: '#bfff00'
-      }, {
-        id: 4,
-        name: 'red',
-        hex: '#ff4000'
-      }],
-      modalName: 'game-modal',
-      playerName: null
-    };
-  },
-  created: function created() {
-    this.fetchStoredScores();
-  },
-  mounted: function mounted() {
-    this.nextRound(); // Setup round one when the component is mounted
-    this.setLocalScores(); // Setup the local scores
-    this.$modal.show(this.modalName); // Open the modal
-  },
-  methods: {
-    startGame: function startGame() {
-      if (this.playerName) {
-        this.$modal.hide(this.modalName);
-        this.currentGame.inProgress = true;
-        this.executeRound();
-      } else {
-        alert('Name Please!');
-      }
-    },
-    nextRound: function nextRound() {
-      var random = Math.floor(Math.random() * 4),
-          // random number 0-4 corresponding to choices length
-      choiceId = this.choices[random].id; // id of the choice being pushed to pattern
-      this.currentGame.pattern.push(choiceId);
-      this.playerTurn.choiceCount = 0;
-      this.currentGame.round++;
-    },
-    /**
-     * Simulates the current round
-     * @param  int choiceId
-     * @return void
-     */
-    roundSimulate: function roundSimulate(choiceId) {
-      var self = this;
-      this.activeChoice = this.findChoice(choiceId);
-      setTimeout(function () {
-        self.activeChoice = {};
-      }, 300);
-    },
-    /**
-     * Executes the round simulation
-     * @return void
-     */
-    executeRound: function executeRound() {
-      var i = 0,
-          self = this;
-      this.playerTurn.active = false;
-      var moves = setInterval(function () {
-        self.roundSimulate(self.currentGame.pattern[i]);
-        i++;
-        if (i >= self.currentGame.pattern.length) {
-          clearInterval(moves);
-          self.playerTurn.active = true;
-        }
-      }, 600);
-    },
-    playerSelectChoice: function playerSelectChoice(choiceId) {
-      // If the game is not in progress and it is not the players turns, clicking doesn't do anything
-      if (this.currentGame.inProgress && this.playerTurn.active) {
-        // Choosing the wrong choice will result is a gameover and a reset
-        if (this.currentGame.pattern[this.playerTurn.choiceCount] == choiceId) {
-          this.playerTurn.choiceCount++;
-          // If the player turn is over, set a delay and start the next round
-          if (this.playerTurn.choiceCount >= this.currentGame.pattern.length) {
-            var self = this;
-            setTimeout(function () {
-              self.nextRound(); // setup round
-              self.executeRound(); // execute round
-            }, 500);
-          }
-        } else {
-          this.gameOver();
-        }
-      }
-    },
-    gameOver: function gameOver() {
-      alert('WRONG, GAME OVER');
-      this.addLocalScore();
-      this.addStoredScore();
-      this.resetGame();
-    },
-    findChoice: function findChoice(choiceId) {
-      var result;
-      for (i = 0; i <= this.choices.length; i++) {
-        if (this.choices[i].id == choiceId) {
-          result = this.choices[i];
-          break;
-        }
-      }
-      return result;
-    },
-    resetGame: function resetGame() {
-      this.playerTurn = {
-        active: false,
-        choiceCount: 0
-      };
-      this.currentGame = {
-        round: 0,
-        pattern: [],
-        inProgress: false
-      };
-      this.$modal.show(this.modalName);
-      this.nextRound(); // Setup a new round
-    },
-    isActiveChoice: function isActiveChoice(choice) {
-      if (this.activeChoice.id == choice.id) {
-        return true;
-      } else {
-        return false;
-      }
-    },
-    /**
-     * Sets up the Vue model of the localStorage JSON
-     * If the localStorage value isn't set, setup and empty JSON
-     */
-    setLocalScores: function setLocalScores() {
-      if (localStorage.getItem("scores")) {
-        var scores = JSON.parse(localStorage.getItem("scores"));
-        this.localScores = scores;
-      } else {
-        localStorage.setItem("scores", "[]");
-      }
-    },
-    addLocalScore: function addLocalScore() {
-      var scores = JSON.parse(localStorage.getItem("scores"));
-      // Keep the local scores to a limit of 5
-      if (scores.length >= 5) {
-        scores.pop();
-      }
-      scores.unshift({
-        score: this.getScore(),
-        name: this.playerName
-      });
-      localStorage.setItem("scores", JSON.stringify(scores));
-      this.localScores = scores;
-    },
-    fetchStoredScores: function fetchStoredScores() {
-      var _this = this;
-
-      this.$http.get('/api/scores', {}).then(function (response) {
-        // Success
-        _this.savedScores = response.data;
-        console.log(_this.savedScores);
-      }).catch(function (err) {
-        // Error
-      });
-    },
-    addStoredScore: function addStoredScore() {
-      var _this2 = this;
-
-      this.$http.post('/api/scores', {
-        name: this.playerName,
-        score: this.getScore()
-      }).then(function (response) {
-        console.log(response.data);
-        // The api endpoint gives us the top 20 scores back when we create a new one
-        // So we can update our savedScores model
-        _this2.savedScores = response.data;
-      }).catch(function (err) {});
-    },
-    getScore: function getScore() {
-      return this.currentGame.round - 1;
-    }
-  },
-  computed: {},
-  filters: {
-    limit: function limit(arr, _limit) {
-      return arr.slice(0, 5);
-    }
-  }
-};
-
-/***/ }),
-/* 43 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    [
-      _c("h2", { staticClass: "text-center mb-0" }, [
-        _vm._v("Score: " + _vm._s(_vm.getScore()))
-      ]),
-      _vm._v(" "),
-      _c("h4", { staticClass: "text-center" }, [
-        _vm._v(
-          "High Score: " +
-            _vm._s(_vm.savedScores[0] ? _vm.savedScores[0].score : "")
-        )
-      ]),
-      _vm._v(" "),
-      _c(
-        "div",
-        {
-          staticClass: "clearfix",
-          style: { "border-color": _vm.activeChoice.hex },
-          attrs: { id: "gameboard" }
-        },
-        _vm._l(_vm.choices, function(choice) {
-          return _c(
-            "div",
-            {
-              staticClass: "gameboard-block",
-              class: { active: _vm.isActiveChoice(choice) }
-            },
-            [
-              _c("span", {
-                staticClass: "inner",
-                style: { "background-color": choice.hex },
-                attrs: { href: "#" },
-                on: {
-                  click: function($event) {
-                    _vm.playerSelectChoice(choice.id)
-                  }
-                }
-              })
-            ]
-          )
-        })
-      ),
-      _vm._v(" "),
-      _c("modal", { attrs: { name: _vm.modalName, clickToClose: false } }, [
-        _c("div", { staticClass: "row" }, [
-          _c("div", { staticClass: "col-12" }, [
-            _c("div", { staticClass: "text-center" }, [
-              _c("h1", [_vm._v("Welcome!")]),
-              _vm._v(" "),
-              _c("p", [
-                _vm._v(
-                  "To get started, enter your name so we can keep track of your score."
-                )
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "form-group" }, [
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.playerName,
-                      expression: "playerName"
-                    }
-                  ],
-                  staticClass: "form-control",
-                  attrs: { type: "text", placeholder: "Name.." },
-                  domProps: { value: _vm.playerName },
-                  on: {
-                    input: function($event) {
-                      if ($event.target.composing) {
-                        return
-                      }
-                      _vm.playerName = $event.target.value
-                    }
-                  }
-                })
-              ]),
-              _vm._v(" "),
-              _c("h3", [_vm._v("Player Name: " + _vm._s(_vm.playerName))]),
-              _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-md btn-success",
-                  on: {
-                    click: function($event) {
-                      $event.preventDefault()
-                      _vm.startGame()
-                    }
-                  }
-                },
-                [_vm._v("Start Game")]
-              )
-            ])
-          ]),
-          _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "col-12 col-md-6" },
-            [
-              _c("h3", [_vm._v("Past 5 Games")]),
-              _vm._v(" "),
-              _vm._l(_vm.localScores, function(score) {
-                return _c("p", { staticClass: "mb-0" }, [
-                  _vm._v(_vm._s(score.name) + " - " + _vm._s(score.score))
-                ])
-              })
-            ],
-            2
-          ),
-          _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "col-12 col-md-6" },
-            [
-              _c("h3", [_vm._v("Top 5 All Time Scores")]),
-              _vm._v(" "),
-              _vm._l(_vm.savedScores, function(score, index) {
-                return _c("p", { staticClass: "mb-0" }, [
-                  _vm._v(
-                    _vm._s(index + 1) +
-                      ". " +
-                      _vm._s(score.name) +
-                      ": " +
-                      _vm._s(score.score)
-                  )
-                ])
-              })
-            ],
-            2
-          )
-        ])
-      ])
-    ],
-    1
-  )
-}
-var staticRenderFns = []
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-25a1281e", module.exports)
-  }
-}
-
-/***/ }),
-/* 44 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 45 */,
-/* 46 */,
-/* 47 */,
-/* 48 */,
-/* 49 */,
-/* 50 */,
-/* 51 */,
-/* 52 */,
-/* 53 */,
-/* 54 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -44570,7 +43973,7 @@ var xhrClient = function (request) {
 
 var nodeClient = function (request) {
 
-    var client = __webpack_require__(55);
+    var client = __webpack_require__(39);
 
     return new PromiseObj(function (resolve) {
 
@@ -45046,10 +44449,599 @@ if (typeof window !== 'undefined' && window.Vue) {
 
 
 /***/ }),
-/* 55 */
+/* 39 */
 /***/ (function(module, exports) {
 
 /* (ignored) */
+
+/***/ }),
+/* 40 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(8)
+/* script */
+var __vue_script__ = __webpack_require__(41)
+/* template */
+var __vue_template__ = __webpack_require__(42)
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/Example.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] Example.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-0393f8f4", Component.options)
+  } else {
+    hotAPI.reload("data-v-0393f8f4", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 41 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    mounted: function mounted() {
+        console.log('Component mounted.');
+    }
+});
+
+/***/ }),
+/* 42 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _vm._m(0)
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "container" }, [
+      _c("div", { staticClass: "row" }, [
+        _c("div", { staticClass: "col-md-8 col-md-offset-2" }, [
+          _c("div", { staticClass: "panel panel-default" }, [
+            _c("div", { staticClass: "panel-heading" }, [
+              _vm._v("Example Component")
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "panel-body" }, [
+              _vm._v(
+                "\n                    I'm an example component!\n                "
+              )
+            ])
+          ])
+        ])
+      ])
+    ])
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+     require("vue-hot-reload-api").rerender("data-v-0393f8f4", module.exports)
+  }
+}
+
+/***/ }),
+/* 43 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(8)
+/* script */
+var __vue_script__ = __webpack_require__(44)
+/* template */
+var __vue_template__ = __webpack_require__(45)
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/GameBoard.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] GameBoard.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-25a1281e", Component.options)
+  } else {
+    hotAPI.reload("data-v-25a1281e", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 44 */
+/***/ (function(module, exports) {
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+module.exports = {
+  http: {
+    headers: {
+      'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    }
+  },
+  props: ['user'],
+  data: function data() {
+    return {
+      currentGame: {
+        round: 0,
+        inProgress: false,
+        pattern: []
+      },
+      playerTurn: {
+        active: false,
+        choiceCount: 0
+      },
+      localScores: [],
+      savedScores: [],
+      activeChoice: {},
+      choices: [{
+        id: 1,
+        name: 'blue',
+        hex: '#0040ff'
+      }, {
+        id: 2,
+        name: 'yellow',
+        hex: '#ffff4d'
+      }, {
+        id: 3,
+        name: 'green',
+        hex: '#bfff00'
+      }, {
+        id: 4,
+        name: 'red',
+        hex: '#ff4000'
+      }],
+      modalName: 'game-modal',
+      playerName: null
+    };
+  },
+  created: function created() {
+    this.fetchStoredScores();
+  },
+  mounted: function mounted() {
+    this.nextRound(); // Setup round one when the component is mounted
+    this.setLocalScores(); // Setup the local scores
+    this.$modal.show(this.modalName); // Open the modal
+  },
+  methods: {
+    startGame: function startGame() {
+      if (this.playerName) {
+        this.$modal.hide(this.modalName);
+        this.currentGame.inProgress = true;
+        this.executeRound();
+      } else {
+        alert('Name Please!');
+      }
+    },
+    genRandBetween: function genRandBetween(min, max) {
+      return Math.round(Math.random() * (max - min) + min);
+    },
+    nextRound: function nextRound() {
+      var random = this.genRandBetween(0, 4),
+          // random number 0-4 corresponding to choices length
+      choiceId = this.choices[random].id; // id of the choice being pushed to pattern
+      this.currentGame.pattern.push(choiceId);
+      this.playerTurn.choiceCount = 0;
+      this.currentGame.round++;
+    },
+    /**
+     * Simulates the current round
+     * @param  int choiceId
+     * @return void
+     */
+    roundSimulate: function roundSimulate(choiceId) {
+      var self = this;
+      this.activeChoice = this.findChoice(choiceId);
+      setTimeout(function () {
+        self.activeChoice = {};
+      }, 300);
+    },
+    /**
+     * Executes the round simulation
+     * @return void
+     */
+    executeRound: function executeRound() {
+      var i = 0,
+          self = this;
+      this.playerTurn.active = false;
+      var moves = setInterval(function () {
+        self.roundSimulate(self.currentGame.pattern[i]);
+        i++;
+        if (i >= self.currentGame.pattern.length) {
+          clearInterval(moves);
+          self.playerTurn.active = true;
+        }
+      }, 600);
+    },
+    playerSelectChoice: function playerSelectChoice(choiceId) {
+      // If the game is not in progress and it is not the players turns, clicking doesn't do anything
+      if (this.currentGame.inProgress && this.playerTurn.active) {
+        // Choosing the wrong choice will result is a gameover and a reset
+        if (this.currentGame.pattern[this.playerTurn.choiceCount] == choiceId) {
+          this.playerTurn.choiceCount++;
+          // If the player turn is over, set a delay and start the next round
+          if (this.playerTurn.choiceCount >= this.currentGame.pattern.length) {
+            var self = this;
+            setTimeout(function () {
+              self.nextRound(); // setup round
+              self.executeRound(); // execute round
+            }, 500);
+          }
+        } else {
+          this.gameOver();
+        }
+      }
+    },
+    gameOver: function gameOver() {
+      alert('WRONG, GAME OVER');
+      this.addLocalScore();
+      this.addStoredScore();
+      this.resetGame();
+    },
+    findChoice: function findChoice(choiceId) {
+      var result;
+      for (i = 0; i <= this.choices.length; i++) {
+        if (this.choices[i].id == choiceId) {
+          result = this.choices[i];
+          break;
+        }
+      }
+      return result;
+    },
+    resetGame: function resetGame() {
+      this.playerTurn = {
+        active: false,
+        choiceCount: 0
+      };
+      this.currentGame = {
+        round: 0,
+        pattern: [],
+        inProgress: false
+      };
+      this.$modal.show(this.modalName);
+      this.nextRound(); // Setup a new round
+    },
+    isActiveChoice: function isActiveChoice(choice) {
+      if (this.activeChoice.id == choice.id) {
+        return true;
+      } else {
+        return false;
+      }
+    },
+    /**
+     * Sets up the Vue model of the localStorage JSON
+     * If the localStorage value isn't set, setup and empty JSON
+     */
+    setLocalScores: function setLocalScores() {
+      if (localStorage.getItem("scores")) {
+        var scores = JSON.parse(localStorage.getItem("scores"));
+        this.localScores = scores;
+      } else {
+        localStorage.setItem("scores", "[]");
+      }
+    },
+    addLocalScore: function addLocalScore() {
+      var scores = JSON.parse(localStorage.getItem("scores"));
+      // Keep the local scores to a limit of 5
+      if (scores.length >= 5) {
+        scores.pop();
+      }
+      scores.unshift({
+        score: this.getScore(),
+        name: this.playerName
+      });
+      localStorage.setItem("scores", JSON.stringify(scores));
+      this.localScores = scores;
+    },
+    fetchStoredScores: function fetchStoredScores() {
+      var _this = this;
+
+      this.$http.get('/api/scores', {}).then(function (response) {
+        // Success
+        _this.savedScores = response.data;
+      }).catch(function (err) {
+        // Error
+      });
+    },
+    addStoredScore: function addStoredScore() {
+      var _this2 = this;
+
+      this.$http.post('/api/scores', {
+        name: this.playerName,
+        score: this.getScore()
+      }).then(function (response) {
+        // The api endpoint gives us the top 20 scores back when we create a new one
+        // So we can update our savedScores model
+        _this2.savedScores = response.data;
+      }).catch(function (err) {});
+    },
+    getScore: function getScore() {
+      return this.currentGame.round - 1;
+    }
+  },
+  computed: {},
+  filters: {
+    limit: function limit(arr, _limit) {
+      return arr.slice(0, 5);
+    }
+  }
+};
+
+/***/ }),
+/* 45 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    [
+      _c("h2", { staticClass: "text-center mb-0" }, [
+        _vm._v("Score: " + _vm._s(_vm.getScore()))
+      ]),
+      _vm._v(" "),
+      _c("h4", { staticClass: "text-center" }, [
+        _vm._v(
+          "High Score: " +
+            _vm._s(_vm.savedScores[0] ? _vm.savedScores[0].score : "")
+        )
+      ]),
+      _vm._v(" "),
+      _c(
+        "div",
+        {
+          staticClass: "clearfix",
+          style: { "border-color": _vm.activeChoice.hex },
+          attrs: { id: "gameboard" }
+        },
+        _vm._l(_vm.choices, function(choice) {
+          return _c(
+            "div",
+            {
+              staticClass: "gameboard-block",
+              class: { active: _vm.isActiveChoice(choice) }
+            },
+            [
+              _c("span", {
+                staticClass: "inner",
+                style: { "background-color": choice.hex },
+                attrs: { href: "#" },
+                on: {
+                  click: function($event) {
+                    _vm.playerSelectChoice(choice.id)
+                  }
+                }
+              })
+            ]
+          )
+        })
+      ),
+      _vm._v(" "),
+      _c("modal", { attrs: { name: _vm.modalName, clickToClose: false } }, [
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-12" }, [
+            _c("div", { staticClass: "text-center" }, [
+              _c("h1", [_vm._v("Welcome!")]),
+              _vm._v(" "),
+              _c("p", [
+                _vm._v(
+                  "To get started, enter your name so we can keep track of your score."
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form-group" }, [
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.playerName,
+                      expression: "playerName"
+                    }
+                  ],
+                  staticClass: "form-control",
+                  attrs: { type: "text", placeholder: "Name.." },
+                  domProps: { value: _vm.playerName },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.playerName = $event.target.value
+                    }
+                  }
+                })
+              ]),
+              _vm._v(" "),
+              _c("h3", [_vm._v("Player Name: " + _vm._s(_vm.playerName))]),
+              _vm._v(" "),
+              _c(
+                "button",
+                {
+                  staticClass: "btn btn-md btn-success",
+                  on: {
+                    click: function($event) {
+                      $event.preventDefault()
+                      _vm.startGame()
+                    }
+                  }
+                },
+                [_vm._v("Start Game")]
+              )
+            ])
+          ]),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "col-12 col-md-6" },
+            [
+              _c("h3", [_vm._v("Past 5 Games")]),
+              _vm._v(" "),
+              _vm._l(_vm.localScores, function(score) {
+                return _c("p", { staticClass: "mb-0" }, [
+                  _vm._v(_vm._s(score.name) + " - " + _vm._s(score.score))
+                ])
+              })
+            ],
+            2
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "col-12 col-md-6" },
+            [
+              _c("h3", [_vm._v("Top 5 All Time Scores")]),
+              _vm._v(" "),
+              _vm._l(_vm.savedScores, function(score, index) {
+                return _c("p", { staticClass: "mb-0" }, [
+                  _vm._v(
+                    _vm._s(index + 1) +
+                      ". " +
+                      _vm._s(score.name) +
+                      ": " +
+                      _vm._s(score.score)
+                  )
+                ])
+              })
+            ],
+            2
+          )
+        ])
+      ])
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+     require("vue-hot-reload-api").rerender("data-v-25a1281e", module.exports)
+  }
+}
+
+/***/ }),
+/* 46 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
 
 /***/ })
 /******/ ]);

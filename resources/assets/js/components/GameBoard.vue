@@ -231,7 +231,6 @@
         .then((response) => {
           // Success
           this.savedScores = response.data;
-          console.log(this.savedScores);
         })
         .catch((err) => {
           // Error
@@ -243,7 +242,6 @@
           score: this.getScore()
          })
         .then((response) => {
-          console.log(response.data);
           // The api endpoint gives us the top 20 scores back when we create a new one
           // So we can update our savedScores model
           this.savedScores = response.data;

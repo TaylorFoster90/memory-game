@@ -35,4 +35,5 @@ The biggest obstacle I ran into is if the simulation chose the same choice twice
 - Styling / UI could be optimized
 - Sounds effects added when a user clicks a choice
 - Discover more options for / optimize the `roundSimulate()` and `executeRound()` methods in the Vue model
+- Efficient Error Handling
 - Add a 'Full Leaderboard' that shows ALL scores from database ( currently top 5 displayed )

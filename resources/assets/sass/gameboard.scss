@@ -105,13 +105,17 @@ $red: rgb(255, 64, 0);
   }
 }
 
-// Vue Modal Styles
+// Vue Modal Styles, use !important to override JS
 .v--modal-box.v--modal{
   padding: 30px;
   min-height: 400px!important;
   height: auto!important;
   overflow: scroll!important;
   top: 40px!important;
+  @media( max-width: 767px ) {
+    width: 100%!important;
+    top: 20px!important;
+  }
 }
 
 // Classes
