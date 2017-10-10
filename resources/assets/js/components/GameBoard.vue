@@ -107,8 +107,11 @@
           alert('Name Please!');
         }
       },
+      genRandBetween: function(min, max) {
+        return Math.round(Math.random() * (max - min) + min);
+      },
       nextRound: function(){
-        var random = Math.floor(Math.random() * 4), // random number 0-4 corresponding to choices length
+        var random = this.genRandBetween(0,4), // random number 0-4 corresponding to choices length
             choiceId = this.choices[random].id; // id of the choice being pushed to pattern
         this.currentGame.pattern.push(choiceId);
         this.playerTurn.choiceCount = 0;
